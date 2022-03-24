@@ -1,0 +1,55 @@
+<?xml version="3.0" encoding="UTF-8"?>
+
+<project name="modeling project" agentwidth="16" agentheight="16" version="2.0" application="asj-3.0.0">
+  <filelayout appletbase="classes"
+              behaviorbase="."
+              depictionbase="classes"
+              worksheetbase="classes"
+              simpropertiesbase="classes"
+              backgroundbase="classes/backgrounds"/>
+  <files>
+    <simpropertiesfile url="Simulation-Properties.sip"/>
+    <worksheetfile url="Fish and Seals.ws"/>
+  </files>
+  <gallery>
+    <agentdef name="Fish" twistdown="true">
+      <behaviorfile url="fish.vat"/>
+      <depictiondef name="Fish" url="fish.gif"/>
+      <depictiondef name="Taggedfish" url="taggedfish.gif"/>
+      <depictiondef name="Deadfish" url="deadfish.gif"/>
+    </agentdef>
+    <agentdef name="Seals" twistdown="true">
+      <behaviorfile url="seals.vat"/>
+      <depictiondef name="Seals" url="seals.gif"/>
+      <depictiondef name="Taggedseals" url="taggedseals.gif"/>
+      <depictiondef name="Deadseals" url="deadseals.gif"/>
+    </agentdef>
+    <agentdef name="Counter" twistdown="true">
+      <behaviorfile url="counter.vat"/>
+      <depictiondef name="Counter" url="counter.gif"/>
+    </agentdef>
+    <agentdef name="Background" twistdown="true">
+      <behaviorfile url="background.vat"/>
+      <depictiondef name="Background" url="background.gif"/>
+      <depictiondef name="Water" url="water.gif"/>
+      <depictiondef name="Floatingwood" url="floatingwood.gif"/>
+      <depictiondef name="Trash" url="trash.gif"/>
+      <depictiondef name="Alge" url="alge.gif"/>
+    </agentdef>
+    <agentdef name="Fishingboats" twistdown="true">
+      <behaviorfile url="fishingboats.vat"/>
+      <depictiondef name="Fishingboats" url="fishingboats.gif"/>
+    </agentdef>
+  </gallery>
+  <openwindows>
+    <gallerywindow x="-9" y="297" width="198" height="400"/>
+    <actionpalettewindow x="1011" y="64" width="264" height="400"/>
+    <conditionpalettewindow x="36" y="22" width="264" height="400"/>
+    <behavioreditorwindow url="seals.vat"/>
+    <behavioreditorwindow url="fish.vat"/>
+    <behavioreditorwindow url="fishingboats.vat"/>
+    <behavioreditorwindow url="counter.vat"/>
+    <worksheetwindow url="Fish and Seals.ws"/>
+    <simpropertieswindow url="Simulation-Properties.sip"/>
+  </openwindows>
+</project>

@@ -1,0 +1,11 @@
+/*
+ * This program simulates particles moving about in a confined space.
+ *
+ * Authors:
+ *     Aaron Weeden, 2013
+ *     Phil List, 2013
+ */
+
+#canvas {
+  border: 1px solid black;
+}

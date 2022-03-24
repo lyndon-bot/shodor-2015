@@ -1,0 +1,336 @@
+{UTF-8}
+Tagged Prey Pop= INTEG (
+	tagged prey births-tagged prey deaths,
+		160-intf)
+	~	prey
+	~		|
+
+Tagged Predator Pop= INTEG (
+	tagged predator births-tagged predator deaths,
+		50-ints)
+	~	predators
+	~		|
+
+intf=
+	65
+	~	prey [20,70,1]
+	~		|
+
+ints=
+	30
+	~	predators [0,49,1]
+	~		|
+
+Predator Population= INTEG (
+	predator births-predator deaths,
+		ints)
+	~	predators
+	~		|
+
+Prey Population= INTEG (
+	prey births-prey deaths,
+		intf)
+	~	prey
+	~		|
+
+All pred=
+	Predator Population+Tagged Predator Pop
+	~	
+	~		|
+
+All prey=
+	Prey Population+Tagged Prey Pop
+	~	
+	~		|
+
+tagged pred death prop constant=
+	0.42
+	~	1/season [0.4,0.44,0.01]
+	~		|
+
+predator births=
+	predator birth fraction*Predator Population*(Prey Population+1.3*Tagged Prey Pop)
+	~	predators/season
+	~		|
+
+tagged predator deaths=
+	tagged pred death prop constant*Tagged Predator Pop
+	~	predators/season
+	~		|
+
+tagged prey births=
+	prey birth fraction*Tagged Prey Pop
+	~	
+	~		|
+
+tagged prey death proportionality constant=
+	0.015
+	~	1/(season*predator) [0.015,0.02,0.001]
+	~		|
+
+tagged prey deaths=
+	(Predator Population+0.7*Tagged Predator Pop)*(tagged prey death proportionality constant\
+		*Tagged Prey Pop)
+	~	prey/season
+	~		|
+
+prey deaths=
+	(prey death proportionality constant*Prey Population)*(Predator Population+0.7*Tagged Predator Pop\
+		)
+	~	prey/season
+	~		|
+
+tagged predator births=
+	(Prey Population+1.3*Tagged Prey Pop)*predator birth fraction*Tagged Predator Pop
+	~	predators/season
+	~		|
+
+predator birth fraction=
+	0.002
+	~	1/(season*prey) [0,0.05,0.001]
+	~		|
+
+predator death proportionality constant=
+	0.32
+	~	1/season [0.3,0.32,0.01]
+	~		|
+
+predator deaths=
+	predator death proportionality constant*Predator Population
+	~	predators/season
+	~		|
+
+prey birth fraction=
+	0.5
+	~	1/season [0,4,0.1]
+	~		|
+
+prey births=
+	prey birth fraction*Prey Population
+	~	prey/season
+	~		|
+
+prey death proportionality constant=
+	0.008
+	~	1/(predator*season) [0,0.05,0.001]
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 40
+	~	seasons
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	seasons
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	seasons [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.02
+	~	seasons [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Prey Population,243,255,53,27,3,3,0,0,0,0,0,0
+10,2,Predator Population,236,420,53,27,3,3,0,0,0,0,0,0
+12,3,48,-160,252,10,8,0,3,0,0,-1,0,0,0
+1,4,6,1,4,0,0,22,0,0,0,-1--1--1,,1|(109,255)|
+1,5,6,3,100,0,0,22,0,0,0,-1--1--1,,1|(-69,255)|
+11,6,48,21,255,8,11,34,3,0,0,1,0,0,0
+10,7,prey births,21,280,45,15,40,3,0,0,-1,0,0,0
+12,8,48,588,256,10,8,0,3,0,0,-1,0,0,0
+1,9,11,8,4,0,0,22,0,0,0,-1--1--1,,1|(510,256)|
+1,10,11,1,100,0,0,22,0,0,0,-1--1--1,,1|(361,256)|
+11,11,48,435,256,8,11,34,3,0,0,1,0,0,0
+10,12,prey deaths,435,282,49,15,40,3,0,0,-1,0,0,0
+12,13,48,-75,420,10,8,0,3,0,0,-1,0,0,0
+1,14,16,2,4,0,0,22,0,0,0,-1--1--1,,1|(130,419)|
+1,15,16,13,100,0,0,22,0,0,0,-1--1--1,,1|(-2,419)|
+11,16,48,69,419,8,11,34,3,0,0,1,0,0,0
+10,17,predator births,69,444,63,15,40,3,0,0,-1,0,0,0
+12,18,48,581,419,10,8,0,3,0,0,-1,0,0,0
+1,19,21,18,4,0,0,22,0,0,0,-1--1--1,,1|(503,419)|
+1,20,21,2,100,0,0,22,0,0,0,-1--1--1,,1|(354,419)|
+11,21,48,428,419,8,11,34,3,0,0,1,0,0,0
+10,22,predator deaths,428,444,67,15,40,3,0,0,-1,0,0,0
+10,23,prey birth fraction,-197,410,75,15,8,3,0,0,0,0,0,0
+10,24,predator birth fraction,-221,514,88,27,8,3,0,0,0,0,0,0
+10,25,prey death proportionality constant,548,356,100,25,8,3,0,0,0,0,0,0
+10,26,predator death proportionality constant,557,524,101,37,8,3,0,0,0,0,0,0
+1,27,23,7,1,0,0,0,0,64,0,-1--1--1,,1|(-132,347)|
+1,28,1,7,1,0,0,0,0,64,0,-1--1--1,,1|(132,291)|
+1,29,1,12,1,0,0,0,0,64,0,-1--1--1,,1|(328,302)|
+1,30,25,12,0,0,0,0,0,64,0,-1--1--1,,1|(489,317)|
+1,31,2,12,1,0,0,0,0,64,0,-1--1--1,,1|(393,415)|
+1,32,26,22,0,0,0,0,0,64,0,-1--1--1,,1|(480,476)|
+1,33,2,22,1,0,0,0,0,64,0,-1--1--1,,1|(317,480)|
+1,34,2,17,1,0,0,0,0,64,0,-1--1--1,,1|(144,479)|
+1,35,24,17,0,0,0,0,0,64,0,-1--1--1,,1|(-71,477)|
+12,36,0,245,176,123,15,8,132,0,42,-1,0,0,0,0-0-0,0-0-0,Arial|16||0-0-128
+Predator-Prey Simulation
+12,37,0,1127,292,317,204,3,188,0,0,1,0,0,0
+Fish_ok?
+1,38,1,16,1,0,0,0,0,64,0,-1--1--1,,1|(72,403)|
+10,39,Tagged Prey Pop,247,595,53,27,3,3,0,0,0,0,0,0
+12,40,48,-161,580,10,8,0,3,0,0,-1,0,0,0
+1,41,43,39,4,0,0,22,0,0,0,-1--1--1,,1|(133,583)|
+1,42,43,40,100,0,0,22,0,0,0,-1--1--1,,1|(-47,583)|
+11,43,48,65,583,8,11,34,3,0,0,1,0,0,0
+10,44,tagged prey births,65,604,61,11,40,3,0,0,-1,0,0,0
+1,45,23,43,1,0,0,0,0,64,0,-1--1--1,,1|(-141,503)|
+12,46,48,560,591,10,8,0,3,0,0,-1,0,0,0
+1,47,49,46,4,0,0,22,0,0,0,-1--1--1,,1|(490,591)|
+1,48,49,39,100,0,0,22,0,0,0,-1--1--1,,1|(357,591)|
+11,49,48,423,591,8,11,34,3,0,0,1,0,0,0
+10,50,tagged prey deaths,423,612,63,11,40,3,0,0,-1,0,0,0
+10,51,tagged prey death proportionality constant,553,667,81,19,8,3,0,0,0,0,0,0
+1,52,51,49,1,0,0,0,0,64,0,-1--1--1,,1|(459,635)|
+1,53,2,49,1,0,0,0,0,64,0,-1--1--1,,1|(307,516)|
+1,54,39,49,1,0,0,0,0,64,0,-1--1--1,,1|(356,650)|
+1,55,39,16,1,0,0,0,0,64,0,-1--1--1,,1|(129,530)|
+1,56,39,43,1,0,0,0,0,64,0,-1--1--1,,1|(125,634)|
+10,57,All prey,327,363,29,11,8,3,0,0,0,0,0,0
+1,58,1,57,0,0,0,0,0,64,0,-1--1--1,,1|(286,311)|
+1,59,39,57,0,0,0,0,0,64,0,-1--1--1,,1|(287,477)|
+10,60,Tagged Predator Pop,236,724,53,27,3,3,0,0,0,0,0,0
+12,61,48,-72,722,10,8,0,3,0,0,-1,0,0,0
+1,62,64,60,4,0,0,22,0,0,0,-1--1--1,,1|(126,722)|
+1,63,64,61,100,0,0,22,0,0,0,-1--1--1,,1|(-5,722)|
+11,64,48,61,722,8,11,34,3,0,0,1,0,0,0
+10,65,tagged predator births,61,743,73,11,40,3,0,0,-1,0,0,0
+12,66,48,544,726,10,8,0,3,0,0,-1,0,0,0
+1,67,69,66,4,0,0,22,0,0,0,-1--1--1,,1|(475,726)|
+1,68,69,60,100,0,0,22,0,0,0,-1--1--1,,1|(345,726)|
+11,69,48,409,726,8,11,34,3,0,0,1,0,0,0
+10,70,tagged predator deaths,409,747,76,11,40,3,0,0,-1,0,0,0
+10,71,tagged pred death prop constant,531,790,60,19,8,3,0,0,0,0,0,0
+1,72,24,64,1,0,0,0,0,64,0,-1--1--1,,1|(-147,656)|
+1,73,71,70,1,0,0,0,0,64,0,-1--1--1,,1|(445,792)|
+1,74,60,65,1,0,0,0,0,64,0,-1--1--1,,1|(164,767)|
+1,75,60,70,1,0,0,0,0,64,0,-1--1--1,,1|(297,779)|
+1,76,1,64,1,0,0,0,0,64,0,-1--1--1,,1|(-315,411)|
+1,77,39,65,1,0,0,0,0,64,0,-1--1--1,,1|(168,668)|
+1,78,60,11,1,0,0,0,0,64,0,-1--1--1,,1|(648,767)|
+1,79,60,49,1,0,0,0,0,64,0,-1--1--1,,1|(368,671)|
+10,80,All pred,407,534,29,11,8,3,0,0,0,0,0,0
+1,81,2,80,0,0,0,0,0,64,0,-1--1--1,,1|(327,481)|
+1,82,60,80,0,0,0,0,0,64,0,-1--1--1,,1|(323,626)|
+10,83,intf,107,96,15,11,8,3,0,0,0,0,0,0
+10,84,ints,167,348,15,11,8,3,0,0,0,0,0,0
+1,85,83,1,0,0,0,0,0,64,1,-1--1--1,,1|(162,162)|
+1,86,84,2,0,0,0,0,0,64,1,-1--1--1,,1|(188,370)|
+10,87,intf,191,508,23,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+10,88,ints,220,800,24,11,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|12||128-128-128
+1,89,87,39,0,0,0,0,0,64,1,-1--1--1,,1|(209,537)|
+1,90,88,60,0,0,0,0,0,64,1,-1--1--1,,1|(224,776)|
+12,91,0,1123,734,317,204,3,188,0,0,1,0,0,0
+Seals_ok?
+///---\\\
+:GRAPH Population
+:TITLE Population
+:WIP
+:X-AXIS Time
+:SCALE
+:VAR Tagged Prey Pop
+:DATASET *
+:LINE-WIDTH 2
+:VAR Prey Population
+:Y-MIN 0
+:Y-MAX 250
+:DATASET *
+:VAR Predator Population
+:DATASET *
+:VAR Tagged Predator Pop
+:DATASET *
+:LINE-WIDTH 2
+
+:GRAPH Phases
+:TITLE Phases
+:X-AXIS Predator Population
+:X-MIN 0
+:X-MAX 1500
+:SCALE
+:VAR Prey Population
+:Y-MIN 0
+:Y-MAX 500
+:VAR tagged prey deaths
+
+:GRAPH Newer_Population
+:TITLE Population
+:X-AXIS Time
+:SCALE
+:VAR All pred
+:Y-MIN 0
+:Y-MAX 250
+:LINE-WIDTH 2
+:VAR All prey
+:LINE-WIDTH 2
+
+:GRAPH Newer_Phases
+:TITLE Newer_Phases
+:X-AXIS All prey
+:X-MIN 0
+:X-MAX 1500
+:SCALE
+:VAR Predator Population
+:Y-MIN 0
+:Y-MAX 1000
+:LINE-WIDTH 1
+
+:GRAPH Simple
+:TITLE Simple
+:SCALE
+:VAR All pred
+:Y-MIN 45
+:Y-MAX 210
+:VAR All prey
+
+:GRAPH Fish_ok?
+:TITLE Fish ok?
+:SCALE
+:VAR All prey
+:Y-MIN 115
+:Y-MAX 210
+
+:GRAPH Seals_ok?
+:TITLE Seals_ok?
+:SCALE
+:VAR All pred
+:Y-MIN 45
+:Y-MAX 80
+:L<%^E!@
+1:Current.vdf
+9:Current
+23:0
+15:0,0,0,0,0,0
+19:100,0
+27:2,
+34:0,
+4:Time
+5:ints
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+42:0
+24:0
+25:40.0007
+26:40.0007

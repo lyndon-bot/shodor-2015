@@ -1,0 +1,21 @@
+<!DOCTYPE html> 
+<html lang="en">
+	<head>
+		<title>Title of my sweet webpage</title>
+		<meta name="keywords" content="HTML, JavaScript, console, log">
+		<meta name="description" content="Using console.log in a Javascript file.">
+		<meta name="author" content="The Shodor Apprentice Instructors">
+		<meta charset="UTF-8">
+	</head>
+	<body onload="convertToF();convertToC()">
+	
+		<script src="temp.js"></script>
+	
+		<p>Insert a Celsius temperature value into the input fields below:</p>
+		<input id="cTemp" onkeyup="convertToF()" maxlength="5" size="5" value="0">&deg; C => <span id="fEquivalent"></span>&deg; F 
+
+
+		<p>This next conversion will require your coding. When a Fahrenheit value is typed into this field, a Celsius equivalent should be calculated:</p>
+		<input id="fTemp" onkeyup="convertToC()" maxlength="5" size="5" value="0">&deg; F => <span id="cEquivalent"></span>&deg; C
+	</body>
+</html>

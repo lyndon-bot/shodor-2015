@@ -1,0 +1,28 @@
+<?xml version="3.0" encoding="UTF-8"?>
+
+<project name="project 2" agentwidth="64" agentheight="64" version="2.0" application="asj-3.0.0">
+  <filelayout appletbase="classes"
+              behaviorbase="."
+              depictionbase="classes"
+              worksheetbase="classes"
+              simpropertiesbase="classes"
+              backgroundbase="classes/backgrounds"/>
+  <gallery>
+    <agentdef name="Fox" twistdown="true">
+      <behaviorfile url="fox.vat"/>
+      <depictiondef name="Fox" url="fox.gif"/>
+    </agentdef>
+    <agentdef name="Hen" twistdown="true">
+      <behaviorfile url="hen.vat"/>
+      <depictiondef name="Hen" url="hen.gif"/>
+    </agentdef>
+    <agentdef name="Background" twistdown="true">
+      <behaviorfile url="background.vat"/>
+      <depictiondef name="Background" url="background.gif"/>
+      <depictiondef name="Trees" url="trees.gif"/>
+    </agentdef>
+  </gallery>
+  <openwindows>
+    <gallerywindow x="172" y="102" width="198" height="400"/>
+  </openwindows>
+</project>

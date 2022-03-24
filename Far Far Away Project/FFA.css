@@ -1,0 +1,66 @@
+body{
+
+background-color: ;
+
+}
+
+canvas {
+
+background-color:;
+width: 700px;
+height:700px;
+left:50px;
+border-radius: 10px;
+border:1px solid black;
+}
+
+#Button1 {
+
+position: absolute;
+top:720px;
+left:10px;
+width:30px;
+height: 30px;
+}
+
+#Button2 {
+
+position: absolute;
+top:720px;
+left:50px;
+width:30px;
+height: 30px;	
+}
+
+#Button3 {
+
+position: absolute;
+top:720px;
+left:90px;
+width:30px;
+height: 30px;	
+}
+
+form{
+float: right;
+background-color:;
+width: 200px;
+height: 700px;
+border: 1px solid black;
+}
+
+#box{
+	margin: 15px;
+}
+
+#b2{
+	margin: auto;
+	margin-left: 10%;
+}
+
+#hr{
+	
+	width: 100%;
+
+}
+

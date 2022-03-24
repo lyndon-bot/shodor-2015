@@ -1,0 +1,28 @@
+_Pseudocode_
+A for loop from 1 through 999
+ if the number i a variable of 3 or 
+ if the number is a multiple of 5.
+  store the number in a variable
+add it all together
+
+_varribles_
+sum 
+tmp
+i
+
+_interactins_
+tmp = i
+sum += tmp
+
+
+_javascript_
+sum = 0
+for (i = 1; i <= 999; i++) {
+	if (i%3 == 0 || i%5 == 0) {
+	
+		tmp = i
+		sum += tmp
+
+}
+}
+

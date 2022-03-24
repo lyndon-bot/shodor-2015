@@ -1,0 +1,171 @@
+<?xml version="3.0" encoding="UTF-8"?>
+
+<behavior name="Seals" version="2.0" application="asj-3.0.0" x="723" y="179" width="617" height="400">
+  <method trigger="(WHILE-RUNNING)"
+          dispatch="firsttopdown"
+          twistdown="true"
+          comment="Put text here to explain what this method does!">
+    <rule>
+      <if>
+        <condition command="(SEE (0 0) &quot;seals&quot;)" modified="1417881150738"/>
+        <condition command="(NEXT-TO = &quot;1&quot; &quot;seals&quot;)" modified="1417881174779"/>
+        <condition command="(%-CHANCE &quot;.5&quot;)" modified="1417890196602"/>
+      </if>
+      <then>
+        <action command="(NEW (-1 0) &quot;seals&quot;)" modified="1417881215127"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(TEST &quot;TimeSinceEaten&quot; &gt;= &quot;20&quot;)" modified="1417889350209"/>
+        <condition command="(%-CHANCE &quot;15&quot;)" modified="1417889314978"/>
+      </if>
+      <then>
+        <action command="(CHANGE (0 0) &quot;deadseals&quot;)" modified="1417889488652"/>
+        <action command="(SET &quot;@SealDeadpop&quot; &quot;to&quot; &quot;@SealDeadpop + 1&quot;)" modified="1417889574314"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE (0 0) &quot;seals&quot;)" modified="1417893312886"/>
+        <condition command="(NEXT-TO = &quot;1&quot; &quot;fishingboats&quot;)" modified="1417893325691"/>
+        <condition command="(ONCE-EVERY &quot;5&quot; &quot;Secs&quot;)" modified="1417888753849"/>
+        <condition command="(%-CHANCE &quot;90&quot;)" modified="1417888758290"/>
+      </if>
+      <then>
+        <action command="(CHANGE (0 0) &quot;taggedseals&quot;)" modified="1417893329725"/>
+        <action command="(SET &quot;@TaggedSealpop&quot; &quot;to&quot; &quot;@TaggedSealpop + 1&quot;)" modified="1417893344306"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(TEST &quot;SealAge&quot; &gt;= &quot;100&quot;)" modified="1417891306755"/>
+      </if>
+      <then>
+        <action command="(CHANGE (0 0) &quot;deadseals&quot;)" modified="1417889488652"/>
+        <action command="(SET &quot;@SealDeadpop&quot; &quot;to&quot; &quot;@SealDeadpop + 1&quot;)" modified="1417889574314"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE (0 0) &quot;deadseals&quot;)" modified="1417889616736"/>
+        <condition command="(ONCE-EVERY &quot;10&quot; &quot;Secs&quot;)" modified="1417889626713"/>
+      </if>
+      <then>
+        <action command="(ERASE (0 0))"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE (0 0) &quot;seals&quot;)" modified="1417880910345"/>
+      </if>
+      <then>
+        <action command="(MOVE-RANDOM-ON &quot;water&quot;)" modified="1417880922127"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE (0 0) &quot;taggedseals&quot;)" modified="1418485728871"/>
+      </if>
+      <then>
+        <action command="(MOVE-RANDOM-ON &quot;water&quot;)" modified="1418485734207"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE (0 0) &quot;fishingboats&quot;)"/>
+      </if>
+      <then/>
+    </rule>
+  </method>
+  <method trigger="(ON &quot;Hunt&quot;)"
+          dispatch="firsttopdown"
+          twistdown="true"
+          comment="Put text here to explain what this method does!">
+    <rule>
+      <if>
+        <condition command="(SEE-A (-1 0) &quot;Fish&quot;)" modified="1418488092685"/>
+      </if>
+      <then>
+        <action command="(ERASE (-1 0))" modified="1418488099489"/>
+        <action command="(SET &quot;Hunger&quot; &quot;to&quot; &quot;0&quot;)" modified="1418488134041"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE-A (-1 1) &quot;Fish&quot;)" modified="1418488172445"/>
+      </if>
+      <then>
+        <action command="(ERASE (-1 1))" modified="1418488174557"/>
+        <action command="(SET &quot;Hunger&quot; &quot;to&quot; &quot;0&quot;)" modified="1418488134041"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE-A (0 1) &quot;Fish&quot;)" modified="1418488179516"/>
+      </if>
+      <then>
+        <action command="(ERASE (0 1))" modified="1418488182226"/>
+        <action command="(SET &quot;Hunger&quot; &quot;to&quot; &quot;0&quot;)" modified="1418488134041"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE-A (1 1) &quot;Fish&quot;)" modified="1418488186598"/>
+      </if>
+      <then>
+        <action command="(ERASE (1 1))" modified="1418488189826"/>
+        <action command="(SET &quot;Hunger&quot; &quot;to&quot; &quot;0&quot;)" modified="1418488134041"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE-A (1 0) &quot;Fish&quot;)" modified="1418488193972"/>
+      </if>
+      <then>
+        <action command="(ERASE (1 0))" modified="1418488196168"/>
+        <action command="(SET &quot;Hunger&quot; &quot;to&quot; &quot;0&quot;)" modified="1418488134041"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE-A (1 -1) &quot;Fish&quot;)" modified="1418488200354"/>
+      </if>
+      <then>
+        <action command="(ERASE (1 -1))" modified="1418488202302"/>
+        <action command="(SET &quot;Hunger&quot; &quot;to&quot; &quot;0&quot;)" modified="1418488134041"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE-A (0 -1) &quot;Fish&quot;)" modified="1418488207834"/>
+      </if>
+      <then>
+        <action command="(ERASE (0 -1))" modified="1418488209862"/>
+        <action command="(SET &quot;Hunger&quot; &quot;to&quot; &quot;0&quot;)" modified="1418488134041"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE-A (-1 -1) &quot;Fish&quot;)" modified="1418488213246"/>
+      </if>
+      <then>
+        <action command="(ERASE (-1 -1))" modified="1418488215257"/>
+        <action command="(SET &quot;Hunger&quot; &quot;to&quot; &quot;0&quot;)" modified="1418488134041"/>
+      </then>
+    </rule>
+  </method>
+  <method trigger="(ON &quot;Tagcount1&quot;)"
+          dispatch="firsttopdown"
+          twistdown="true"
+          comment="Put text here to explain what this method does!">
+    <rule>
+      <if>
+        <condition command="(SEE (0 0) &quot;seals&quot;)" modified="1417882452172"/>
+      </if>
+      <then>
+        <action command="(SET &quot;@Sealpop&quot; &quot;to&quot; &quot;@Sealpop + 1&quot;)" modified="1417882513198"/>
+      </then>
+    </rule>
+  </method>
+</behavior>

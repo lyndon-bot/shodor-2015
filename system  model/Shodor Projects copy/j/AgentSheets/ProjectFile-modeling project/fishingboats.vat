@@ -1,0 +1,9 @@
+<?xml version="3.0" encoding="UTF-8"?>
+
+<behavior name="Fishingboats" version="2.0" application="asj-3.0.0" x="505" y="122" width="476" height="400">
+  <method trigger="(WHILE-RUNNING)"
+          dispatch="firsttopdown"
+          twistdown="true"
+          comment="Put text here to explain what this method does!">
+  </method>
+</behavior>

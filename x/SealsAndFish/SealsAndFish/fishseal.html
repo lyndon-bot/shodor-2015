@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- Author of Two Fish: Aaron Weeden, Shodor, 2014 -->
+<!-- Modifier: Phil List, Shodor, 2015 -->
+
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<title>Fish & Seals: The Saga Continues</title>
+		<script src="fishseal.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="fishseal.css">
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+		<div>
+			<button id="playPause" onclick="play();">PLAY</button>
+			<button id="step" onclick="step();">STEP</button>
+			<button id="refresh" onclick="refresh();">REFRESH</button>
+			<br />
+			<span>Height:</span><input id="ht" size="5" value="16"/>
+			<span>Width:</span><input id="wt" size="5" value="20"/>
+			<span>Seals:</span><input id="nums" size="5" value="10"/>
+			<span>TaggedSeals:</span><input id="nums" size="5" value=""/>
+			<span>Fish:</span><input id="numf" size="5" value="20"/>
+			<span>TaggedFish:</span><input id="numf" size="5" value=""/>
+			<button id="resize" onclick="setup();">UPDATE</button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,132 @@
+     background-color: ButtonText;
+    }
+    .win-navbarcontainer-pageindicator:hover:active {
+        background-color: ButtonText;
+    }
+    .win-navbarcontainer-navarrow {
+        background-color: ButtonFace;
+        color: ButtonText;
+    }
+    .win-navbarcontainer-navarrow:after {
+        position: absolute;
+        top: 0;
+        left:0;
+        border: 2px solid ButtonText;
+        content: "";
+        width: calc(100% - 3px);
+        height: calc(100% - 3px);
+    }
+    .win-navbarcontainer-navarrow:hover {
+        background-color: Highlight;
+        color: HighlightText;
+    }
+    .win-navbarcontainer-navarrow:hover:active {
+        background-color: ButtonText;
+        color: ButtonFace;
+    }
+
+    /*
+        NavBarCommand colors.
+    */
+    .win-navbarcommand-button,
+    .win-navbarcommand-splitbutton {
+        background-color: ButtonFace;
+        color: ButtonText;
+    }
+    .win-navbarcommand-button:after,
+    .win-navbarcommand-splitbutton:after {
+        position: absolute;
+        top: 0;
+        left:0;
+        border: 2px solid ButtonText;
+        content: "";
+        width: calc(100% - 3px);
+        height: calc(100% - 3px);
+        pointer-events: none;
+    }
+    .win-navbarcommand-button:hover,
+    .win-navbarcommand-splitbutton:hover {
+        background-color: Highlight;
+        color: HighlightText;
+    }
+    .win-navbarcommand-splitbutton.win-navbarcommand-splitbutton-opened,
+    .win-navbarcommand-splitbutton.win-navbarcommand-splitbutton-opened:hover,
+    .win-navbarcommand-button.win-pressed,
+    .win-navbarcommand-button.win-pressed:hover,
+    .win-navbarcommand-splitbutton.win-pressed,
+    .win-navbarcommand-splitbutton.win-pressed:hover {
+        background-color: ButtonText;
+        color: ButtonFace;
+    }
+
+    /*
+    FlipView high contrast colors.
+    */
+    .win-flipview .win-navbottom {
+        left: 50%;
+        top: 100%;
+        margin-left: -35px;
+        margin-top: -35px;
+    }
+    .win-flipview .win-navbutton {
+        background-color: ButtonFace;
+        color: ButtonText;
+        border: 2px solid ButtonText;
+        width: 65px;
+        height: 35px;
+    }
+    .win-flipview .win-navbutton:hover {
+        background-color: Highlight;
+        color: HighlightText;
+    }
+    .win-flipview .win-navbutton:active {
+        background-color: ButtonText;
+        color: ButtonFace;
+    }
+    .win-flipview .win-navright {
+        margin-left: -65px;
+    }
+
+    /*
+    Flyout control high contrast colors.
+    */
+    .win-flyout, .win-settingsflyout {
+        background-color: Window;
+        border-color: WindowText;
+        color: WindowText;
+    }
+
+    /*
+    ListView/ItemContainer high contrast colors.
+    */
+    .win-listview.win-selectionstylefilled .win-itembox,
+    .win-itemcontainer.win-selectionstylefilled .win-itembox {
+        background-color: Window;
+        color: WindowText;
+    }
+    .win-listview .win-container:hover,
+    .win-itemcontainer.win-container:hover {
+        outline: Highlight solid 3px;
+    }
+    
+    .win-listview.win-selectionstylefilled .win-container:hover .win-itembox,
+    .win-itemcontainer.win-selectionstylefilled.win-container:hover .win-itembox {
+        background-color: Highlight;
+        color: HighlightText;
+    }
+    .win-listview .win-focusedoutline,
+    .win-listview .win-groupheader,
+    .win-itemcontainer .win-focusedoutline {
+        outline-color: WindowText;
+    }
+    .win-listview.win-selectionstylefilled .win-container.win-selected .win-itembox,
+    .win-listview.win-selectionstylefilled .win-container.win-selected:hover .win-itembox,
+    .win-itemcontainer.win-selectionstylefilled.win-container.win-selected .win-itembox,
+    .win-itemcontainer.win-selectionstylefilled.win-container.win-selected:hover .win-itembox {
+        background-color: Highlight;
+        color: HighlightText;
+    }
+    .win-listview .win-groupheader {
+        color: WindowText;
+    }
+    .win-listview:not(.win-selectionstylefilled

@@ -1,0 +1,109 @@
+<?xml version="3.0" encoding="UTF-8"?>
+
+<behavior name="Fish" version="2.0" application="asj-3.0.0" x="282" y="115" width="622" height="400">
+  <method trigger="(WHILE-RUNNING)"
+          dispatch="firsttopdown"
+          twistdown="true"
+          comment="Put text here to explain what this method does!">
+    <rule>
+      <if>
+        <condition command="(SEE (0 0) &quot;fish&quot;)" modified="1417881244700"/>
+        <condition command="(NEXT-TO = &quot;1&quot; &quot;fish&quot;)" modified="1417885291095"/>
+        <condition command="(%-CHANCE &quot;5&quot;)" modified="1418490789301"/>
+      </if>
+      <then>
+        <action command="(NEW (-1 0) &quot;fish&quot;)" modified="1417881276745"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE (0 0) &quot;fish&quot;)" modified="1417888042784"/>
+        <condition command="(NEXT-TO &gt;= &quot;1&quot; &quot;taggedseals&quot;)" modified="1418489453443"/>
+        <condition command="(%-CHANCE &quot;15&quot;)" modified="1418490249711"/>
+      </if>
+      <then>
+        <action command="(CHANGE (0 0) &quot;deadfish&quot;)" modified="1417888199176"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE (0 0) &quot;taggedfish&quot;)" modified="1417888664020"/>
+        <condition command="(NEXT-TO &gt;= &quot;1&quot; &quot;seals&quot;)" modified="1417888096204"/>
+        <condition command="(%-CHANCE &quot;40&quot;)" modified="1418490242427"/>
+      </if>
+      <then>
+        <action command="(CHANGE (0 0) &quot;deadfish&quot;)" modified="1417888199176"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE (0 0) &quot;fish&quot;)" modified="1418490032204"/>
+        <condition command="(NEXT-TO &gt;= &quot;1&quot; &quot;seals&quot;)" modified="1418490019574"/>
+        <condition command="(%-CHANCE &quot;35&quot;)" modified="1418490235264"/>
+      </if>
+      <then>
+        <action command="(CHANGE (0 0) &quot;deadfish&quot;)" modified="1418485846738"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE (0 0) &quot;taggedfish&quot;)" modified="1418485858139"/>
+        <condition command="(NEXT-TO &gt;= &quot;1&quot; &quot;taggedseals&quot;)" modified="1418485813373"/>
+        <condition command="(%-CHANCE &quot;30&quot;)" modified="1418486371271"/>
+      </if>
+      <then>
+        <action command="(CHANGE (0 0) &quot;deadfish&quot;)" modified="1418485846738"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE (0 0) &quot;deadfish&quot;)" modified="1417890271956"/>
+      </if>
+      <then>
+        <action command="(ERASE (0 0))"/>
+        <action command="(SET &quot;@DeadFishpop&quot; &quot;to&quot; &quot;@DeadFishpop + 1&quot;)" modified="1417890435291"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE (0 0) &quot;fish&quot;)" modified="1417891753093"/>
+        <condition command="(NEXT-TO = &quot;1&quot; &quot;fishingboats&quot;)" modified="1417891740319"/>
+        <condition command="(ONCE-EVERY &quot;5&quot; &quot;Secs&quot;)" modified="1417888753849"/>
+        <condition command="(%-CHANCE &quot;90&quot;)" modified="1417888758290"/>
+      </if>
+      <then>
+        <action command="(CHANGE (0 0) &quot;taggedfish&quot;)" modified="1417888829322"/>
+        <action command="(SET &quot;@TaggedFishpop&quot; &quot;to&quot; &quot;@TaggedFishpop + 1&quot;)" modified="1417891815709"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE (0 0) &quot;fish&quot;)" modified="1417880840813"/>
+      </if>
+      <then>
+        <action command="(MOVE-RANDOM-ON &quot;water&quot;)" modified="1417880854907"/>
+      </then>
+    </rule>
+    <rule>
+      <if>
+        <condition command="(SEE (0 0) &quot;taggedfish&quot;)" modified="1418489833641"/>
+      </if>
+      <then>
+        <action command="(MOVE-RANDOM-ON &quot;water&quot;)" modified="1418489840148"/>
+      </then>
+    </rule>
+  </method>
+  <method trigger="(ON &quot;Tagcount2&quot;)"
+          dispatch="firsttopdown"
+          twistdown="true"
+          comment="Put text here to explain what this method does!">
+    <rule>
+      <if>
+        <condition command="(SEE (0 0) &quot;fish&quot;)" modified="1417882501951"/>
+      </if>
+      <then>
+        <action command="(SET &quot;@Fishpop&quot; &quot;to&quot; &quot;@Fishpop + 1&quot;)" modified="1417882476719"/>
+      </then>
+    </rule>
+  </method>
+</behavior>
